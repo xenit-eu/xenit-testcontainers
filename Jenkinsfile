@@ -37,6 +37,22 @@ pipeline {
                 }
             }
         }
+
+        stage('Close Sonatype Repo') {
+            when {
+                anyOf {
+                    branch "release*"
+                }
+            }
+            environment {
+                SONNATYPE_CREDENTIALS = credentials('sonatype')
+            }
+            steps {
+                script {
+                    sh "./gradlew closeAndReleaseRepository -Pde_publish_username=${SONNATYPE_CREDENTIALS_USR} -Pde_publish_password=${SONNATYPE_CREDENTIALS_PSW}"
+                }
+            }
+        }
     }
 
 
