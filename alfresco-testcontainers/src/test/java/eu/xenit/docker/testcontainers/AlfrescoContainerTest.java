@@ -16,9 +16,9 @@ class AlfrescoContainerTest {
 
     private static Stream<String> alfrescoImages() {
         return Stream.of(
-                "docker.io/alfresco/alfresco-content-repository-community:6.0.7-ga",
+//                "docker.io/alfresco/alfresco-content-repository-community:6.0.7-ga",
 //                "docker.io/alfresco/alfresco-content-repository:6.0.0.5",
-                "docker.io/alfresco/alfresco-content-repository-community:6.1.2-ga",
+//                "docker.io/alfresco/alfresco-content-repository-community:6.1.2-ga",
 //                "docker.io/alfresco/alfresco-content-repository:6.1.1.2",
                 "docker.io/alfresco/alfresco-content-repository-community:6.2.0-ga"
 //                "docker.io/alfresco/alfresco-content-repository:6.2.0"
@@ -34,11 +34,11 @@ class AlfrescoContainerTest {
     private static Stream<Arguments> xenitImages() {
         return Stream.of(
 //                Arguments.arguments(Edition.COMMUNITY, "5.2"),
-                Arguments.arguments(Edition.ENTERPRISE, "5.2"),
+                Arguments.arguments(Edition.ENTERPRISE, "5.2")
 //                Arguments.arguments(Edition.COMMUNITY, "6.0"),
-                Arguments.arguments(Edition.ENTERPRISE, "6.0"),
+//                Arguments.arguments(Edition.ENTERPRISE, "6.0"),
 //                Arguments.arguments(Edition.COMMUNITY, "6.1"),
-                Arguments.arguments(Edition.ENTERPRISE, "6.1")
+//                Arguments.arguments(Edition.ENTERPRISE, "6.1")
         );
     }
 

@@ -17,9 +17,9 @@ class SolrContainerTest {
 
     private static Stream<Arguments> images() {
         return Stream.of(
-                arguments("docker.io/xenit/alfresco-solr1:4.2", Version.SOLR1),
+//                arguments("docker.io/xenit/alfresco-solr1:4.2", Version.SOLR1),
                 arguments("docker.io/xenit/alfresco-solr4:5.2", Version.SOLR4),
-                arguments("docker.io/xenit/alfresco-solr6:1.4.0", Version.SOLR6),
+//                arguments("docker.io/xenit/alfresco-solr6:1.4.0", Version.SOLR6),
                 arguments("docker.io/alfresco/alfresco-search-services:1.4.0", Version.SOLR6)
         );
     }
