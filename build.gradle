@@ -1,3 +1,12 @@
+plugins {
+    id "io.codearte.nexus-staging" version "0.8.0"
+}
+
+nexusStaging {
+    username = project.hasProperty('de_publish_username') ? project.de_publish_username : ''
+    password = project.hasProperty('de_publish_password') ? project.de_publish_password : ''
+}
+
 allprojects {
     repositories {
         mavenCentral()

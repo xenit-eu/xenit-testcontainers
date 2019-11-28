@@ -33,3 +33,13 @@ tasks.withType(Test) {
         events "passed", "skipped", "failed"
     }
 }
+
+apply from: "${rootProject.projectDir}/publish.gradle"
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
