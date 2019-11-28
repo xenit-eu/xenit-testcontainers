@@ -1,0 +1,35 @@
+plugins {
+    id "io.freefair.lombok" version "4.1.5"
+    id 'java'
+    id 'idea'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.testcontainers:testcontainers:${testContainersVersion}"
+    implementation "org.testcontainers:jdbc:${testContainersVersion}"
+    implementation "org.testcontainers:postgresql:${testContainersVersion}"
+
+    testImplementation "org.testcontainers:mysql:${testContainersVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}"
+    testImplementation "org.hamcrest:hamcrest-all:${hamcrestVersion}"
+}
+
+tasks.withType(JavaCompile) {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    options.encoding = "UTF-8"
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}

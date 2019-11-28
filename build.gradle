@@ -1,0 +1,21 @@
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+
+    group = 'eu.xenit.docker.testcontainers'
+    def baseVersion = '0.0.1'
+
+    ext.noSnapshotVersion = baseVersion
+    def branchName = System.env.BRANCH_NAME
+
+    def isRelease = branchName != null && branchName.startsWith("release")
+    version = isRelease ? baseVersion : "${baseVersion}-SNAPSHOT"
+}
+
+ext {
+    testContainersVersion = '1.12.3'
+
+    junitJupiterVersion = '5.5.2'
+    hamcrestVersion = '1.3'
+}
