@@ -19,12 +19,11 @@ Work in progress.
 * Construction an Alfresco container based on Alfresco images  
     ```AlfrescoContainer container = new AlfrescoContainer("docker.io/alfresco/alfresco-content-repository:6.1.1.2")```
 
-### Usage
+## Usage
 
 The [testcontainers documentation](https://www.testcontainers.org/) indicates how the library can / should be used with 
 e.g. JUnit 4 or JUnit 5. 
 
-## Alfresc testcontainers
 
 ## License 
 This project is licensed under the Apache V2 License - see the [LICENSE](LICENSE) file for details.
